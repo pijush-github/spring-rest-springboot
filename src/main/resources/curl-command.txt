@@ -1,0 +1,12 @@
+|BASIC|
+Find All – GET /books >>> curl -v http://localhost:8080/books
+Find One – GET /books/1 >>> curl -v http://localhost:8080/books/1
+Test 404 – GET /books/5 >>> curl -v http://localhost:8080/books/5
+Test Save – POST /books -d {json} >>> curl -v -X POST http://localhost:8080/books -H "Content-type:application/json" -d "{\"name\":\"Spring REST tutorials\",\"author\":\"mkyong\",\"price\":\"9.99\"}"
+Test Update – PUT /books/4 -d {json} >>> curl -v -X PUT http://localhost:8080/books/4 -H "Content-type:application/json" -d "{\"name\":\"Spring Forever\",\"author\":\"pivotal\",\"price\":\"9.99\"}"
+Test Update a ‘author’ field – PATCH /books/4 -d {json} >>> curl -v -X PATCH http://localhost:8080/books/4 -H "Content-type:application/json" -d "{\"author\":\"oracle\"}"
+Test Update a ‘name’ field – PATCH /books/4 -d {json} >>> curl -v -X PATCH http://localhost:8080/books/4 -H "Content-type:application/json" -d "{\"name\":\"New Spring REST\"}"
+Test delete – DELETE /books/4 >>> curl -v -X DELETE http://localhost:8080/books/4
+|VALIDATION|
+Test Save – POST /books -d {json} >>> curl -v -X POST http://localhost:8080/books -H "Content-type:application/json" -d "{\"name\":\"ABC\"}"
+Find Zero – GET /books/0 >>> curl -v http://localhost:8080/books/0
